@@ -11,12 +11,39 @@ end
 -- Vim escape
 insert_map("jj", "<ESC>", { noremap = true })
 
+-- vertical split
+-- nnore map <silent> vv <C-w>v
+
 -- Icon Picker commands
 normal_map("<Leader><Leader>i", "<cmd>IconPickerNormal<cr>")
 
 -- Vim Test commands
 normal_map("<Leader>t", "<cmd>TestNearest<cr>")
 normal_map("<Leader>T", "<cmd>TestFile<cr>")
+
+-- Vertical half page jump with screen centering
+normal_map("<C-d>", "<C-d>zz")
+normal_map("<C-u>", "<C-u>zz")
+
+-- next with screen centering
+normal_map("n", "nzz")
+normal_map("N", "Nzz")
+
+-- telescope maps
+normal_map("tt", "<cmd>Telescope<cr>")
+normal_map("ff", "<cmd>Telescope find_files hidden=true<cr>")
+normal_map("fg", "<cmd>Telescope live_grep <cr>")
+normal_map("fb", "<cmd>Telescope buffers<cr>")
+normal_map("fn", "<cmd>Telescope help_tags<cr>")
+
+-- COC key maps
+normal_map("gd", "<Plug>(coc-definition)<cr>")
+normal_map("gt", "<Plug>(coc-type-definition)<cr>")
+normal_map("gi", "<Plug>(coc-implementation)<cr>")
+normal_map("gr", "<Plug>(coc-references)<cr>")
+
+-- This allows you to write a buffer as sudo if you are not sudo
+vim.keymap.set("c", "w!!", "execute 'silent! write !sudo tee % >/dev/null' <bar> edit!")
 
 -- Harpoon commands
 local harpoon = require("harpoon")
@@ -46,25 +73,3 @@ vim.keymap.set("n", "ml", harpoon_4)
 
 vim.keymap.set("n", "mn", harpoon_next)
 vim.keymap.set("n", "mp", harpoon_previous)
-
--- Vertical half page jump with screen centering
-normal_map("<C-d>", "<C-d>zz")
-normal_map("<C-u>", "<C-u>zz")
-
--- next with screen centering
-normal_map("n", "nzz")
-normal_map("N", "Nzz")
-
--- telescope maps
-normal_map("tt", "<cmd>Telescope<cr>")
-normal_map("ff", "<cmd>Telescope find_files hidden=true<cr>")
-normal_map("fg", "<cmd>Telescope live_grep <cr>")
-normal_map("fb", "<cmd>Telescope buffers<cr>")
-normal_map("fn", "<cmd>Telescope help_tags<cr>")
-
--- COC key maps
-normal_map("gd", "<Plug>(coc-definition)<cr>")
-normal_map("gt", "<Plug>(coc-type-definition)<cr>")
-normal_map("gi", "<Plug>(coc-implementation)<cr>")
-normal_map("gr", "<Plug>(coc-references)<cr>")
-

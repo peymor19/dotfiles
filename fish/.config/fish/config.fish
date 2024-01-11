@@ -37,4 +37,7 @@ alias dc='docker-compose'
 
 alias iem='iex -S mix'
 
+# enable history for Elixir's IEX
+set -x ERL_AFLAGS "-kernel shell_history enabled"
+
 fish_add_path /home/peytonmorrison/.spicetify
