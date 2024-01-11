@@ -1,0 +1,8 @@
+# Basic Settings
+set previewer lf-previewer
+set cleaner lf-cleaner
+set preview true
+set hidden true
+set drawbox true
+set icons true
+set ignorecase true
