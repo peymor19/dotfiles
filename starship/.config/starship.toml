@@ -22,7 +22,7 @@ success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set
 error_symbol = "[➜](bold red)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
 
 [package]
-disabled = false
+disabled = true
 
 [hostname]
 ssh_only = false
@@ -32,6 +32,11 @@ style = "bold dimmed white"
 disabled = true
 
 [php]
+disabled = true
+format = '[$symbol]($style)'
+version_format = ''
+
+[elixir]
 disabled = true
 format = '[$symbol]($style)'
 version_format = ''

@@ -1,75 +1,41 @@
 local opts = { noremap = true, silent = true }
 
-local normal_map = function(command, output)
-    vim.api.nvim_set_keymap('n', command, output, opts)
-end
-
-local insert_map = function(command, output)
-    vim.api.nvim_set_keymap('i', command, output, opts)
-end
-
 -- Vim escape
-insert_map("jj", "<ESC>", { noremap = true })
+vim.api.nvim_set_keymap("i", "jj", "<ESC>", opts)
 
 -- vertical split
 -- nnore map <silent> vv <C-w>v
 
--- Icon Picker commands
-normal_map("<Leader><Leader>i", "<cmd>IconPickerNormal<cr>")
-
 -- Vim Test commands
-normal_map("<Leader>t", "<cmd>TestNearest<cr>")
-normal_map("<Leader>T", "<cmd>TestFile<cr>")
+vim.api.nvim_set_keymap("n", "<Leader>t", "<cmd>TestNearest<cr>", opts)
+vim.api.nvim_set_keymap("n", "<Leader>T", "<cmd>TestFile<cr>", opts)
 
 -- Vertical half page jump with screen centering
-normal_map("<C-d>", "<C-d>zz")
-normal_map("<C-u>", "<C-u>zz")
+vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", opts)
+vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", opts)
 
 -- next with screen centering
-normal_map("n", "nzz")
-normal_map("N", "Nzz")
+vim.api.nvim_set_keymap("n", "n", "nzz", opts)
+vim.api.nvim_set_keymap("n", "N", "Nzz", opts)
+
+-- Switch lines
+vim.api.nvim_set_keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
+vim.api.nvim_set_keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 
 -- telescope maps
-normal_map("tt", "<cmd>Telescope<cr>")
-normal_map("ff", "<cmd>Telescope find_files hidden=true<cr>")
-normal_map("fg", "<cmd>Telescope live_grep <cr>")
-normal_map("fb", "<cmd>Telescope buffers<cr>")
-normal_map("fn", "<cmd>Telescope help_tags<cr>")
+vim.keymap.set('n', "tt", "<cmd>Telescope<cr>")
+
+-- vim.keymap.set('n', "ff", "<cmd>Telescope find_files hidden=true<cr>")
+vim.keymap.set('n', "ff", "<cmd>Telescope find_files hidden=true<cr>")
+vim.keymap.set('n', "fg", "<cmd>Telescope live_grep <cr>")
+vim.keymap.set('n', "fb", "<cmd>Telescope buffers<cr>")
+vim.keymap.set('n', "fn", "<cmd>Telescope help_tags<cr>")
 
 -- COC key maps
-normal_map("gd", "<Plug>(coc-definition)<cr>")
-normal_map("gt", "<Plug>(coc-type-definition)<cr>")
-normal_map("gi", "<Plug>(coc-implementation)<cr>")
-normal_map("gr", "<Plug>(coc-references)<cr>")
+vim.keymap.set("n", "gd", "<Plug>(coc-definition)<cr>", opts)
+vim.keymap.set("n", "gt", "<Plug>(coc-type-definition)<cr>", opts)
+vim.keymap.set("n", "gi", "<Plug>(coc-implementation)<cr>", opts)
+vim.keymap.set("n", "gr", "<Plug>(coc-references)<cr>", opts)
 
 -- This allows you to write a buffer as sudo if you are not sudo
 vim.keymap.set("c", "w!!", "execute 'silent! write !sudo tee % >/dev/null' <bar> edit!")
-
--- Harpoon commands
-local harpoon = require("harpoon")
-harpoon:setup()
-
-local harpoon_menu = function()
-    harpoon.ui:toggle_quick_menu(harpoon:list())
-end
-
-local harpoon_add = function() harpoon:list():append() end
-
-local harpoon_1 = function() harpoon:list():select(1) end
-local harpoon_2 = function() harpoon:list():select(2) end
-local harpoon_3 = function() harpoon:list():select(3) end
-local harpoon_4 = function() harpoon:list():select(4) end
-
-local harpoon_next = function() harpoon:list():prev() end
-local harpoon_previous = function() harpoon:list():next() end
-
-vim.keymap.set("n", "mm", harpoon_menu)
-vim.keymap.set("n", "ma", harpoon_add)
-
-vim.keymap.set("n", "mh", harpoon_1)
-vim.keymap.set("n", "mj", harpoon_2)
-vim.keymap.set("n", "mk", harpoon_3)
-vim.keymap.set("n", "ml", harpoon_4)
-
-vim.keymap.set("n", "mn", harpoon_next)
-vim.keymap.set("n", "mp", harpoon_previous)

@@ -1,9 +1,6 @@
 -- Vim Leader key
 vim.g.mapleader = ' '
 
--- Vim Colorscheme
-vim.cmd.colorscheme('tokyonight')
-
 -- Vim Colors
 vim.opt.termguicolors = true
 
@@ -41,18 +38,6 @@ vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.showmatch = true
-
--- Airline plugin configs
-vim.g.airline_theme = 'onedark'
-vim.g.airline_extensions_tabline_enabled = 0
-vim.g.airline_extensions_tabline_formatter = 'unique_tail_improved'
-vim.g.airline_extensions_tabline_left_sep = ''
-vim.g.airline_extensions_tabline_left_alt_sep = ''
-vim.g.airline_extensions_tabline_right_sep = ''
-vim.g.airline_extensions_tabline_right_alt_sep = ''
-vim.g.airline_powerline_fonts = 1
-vim.g.airline_left_sep = ''
-vim.g.airline_right_sep = ''
 
 -- COC config
 vim.g.coc_global_extensions = {'coc-snippets','coc-pairs','coc-tsserver','coc-eslint','coc-prettier','coc-json'}
