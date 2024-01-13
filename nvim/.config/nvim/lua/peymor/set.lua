@@ -39,12 +39,10 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.showmatch = true
 
--- COC config
-vim.g.coc_global_extensions = {'coc-snippets','coc-pairs','coc-tsserver','coc-eslint','coc-prettier','coc-json'}
-
 -- Vim Wiki
 vim.g.vimwiki_list = { { path = '~/vimwiki/', syntax = 'markdown', ext = 'md' } }
 
+-- random vim config
 vim.opt.showmode = false
 vim.opt.showcmd = false
 vim.opt.updatetime = 50
@@ -53,7 +51,7 @@ vim.opt.signcolumn = "no"
 vim.opt.compatible = false
 
 -- Auto change directory to newly created file directory
-vim.opt.autochdir = true
+vim.opt.autochdir = false
 
 -- Sets a color column on the right for reference
 -- vim.opt.colorcolumn = "80"
