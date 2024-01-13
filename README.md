@@ -44,10 +44,9 @@ chsh -s $(which fish)
 ```
 
 ## Install
-Clone repo into your home dir:
-```
-git clone git@gitlab.com:peyton.morrison/codeaholic/personal-projects/.dotfiles.git ~/.dotfiles
-```
+
+Clone repo into your home dir
+
 Install dotfiles:
 ```
 cd ~/.dotfiles/
