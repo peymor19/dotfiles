@@ -48,7 +48,26 @@ brew install ssh-copy-id
 brew install tree
 brew install elixir
 
+# this install dotfiles
+brew install stow
+brew install ripgrep
+
+brew tap homebrew/cask-fonts
+brew install font-hack-nerd-font
+brew install --cask font-fira-code
+
+brew install wget
+
+
+# terminal file explorer
+brew install lf
+
+# nicer cat
+brew install bat
+brew install --cask amethyst
+
 
 
 # Remove outdated versions from the cellar.
 brew cleanup
+

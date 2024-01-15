@@ -33,6 +33,11 @@ install pynvim
 /usr/bin/python3 -m pip install pynvim
 ```
 
+for alacritty
+```
+ curl -sSL https://raw.githubusercontent.com/alacritty/alacritty/master/extra/alacritty.info | tic -x -
+```
+
 ```
 echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 ```
