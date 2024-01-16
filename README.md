@@ -26,6 +26,8 @@ perl-JSON-PP
 composer
 dunst
 alacritty
+rofi
+i3
 ```
 
 install pynvim

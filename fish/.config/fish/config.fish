@@ -2,7 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-set -x PATH $PATH /usr/local/go/bin $GOPATH/bin ~/go/bin /opt/z/ /opt/ccls /opt/phplinter $HOME/.config/lf/ $HOME/.local/bin/ $HOME/.cargo/bin
+set -x PATH $PATH /usr/local/go/bin $GOPATH/bin ~/go/bin /opt $HOME/.config/lf/ $HOME/.local/bin/ $HOME/.cargo/bin
 
 starship init fish | source
 
@@ -48,3 +48,5 @@ alias ism='iex -S mix'
 
 # enable history for Elixir's IEX
 set -x ERL_AFLAGS "-kernel shell_history enabled"
+set -x TERM "alacritty"
+set -x TERMINAL "alacritty"
