@@ -42,7 +42,7 @@ alias f='vim "$(fzf)"'
 
 alias pdf='evince'
 
-alias dc='docker-compose'
+alias dc='docker compose'
 
 alias ism='iex -S mix'
 
