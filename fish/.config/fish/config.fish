@@ -1,12 +1,9 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-end
-
 set -x PATH $PATH /usr/local/go/bin $GOPATH/bin ~/go/bin /opt $HOME/.config/lf/ $HOME/.local/bin/ $HOME/.cargo/bin
 
-starship init fish | source
-
+source ~/.config/fish/fish_greeting
 set -U fish_greeting
+
+starship init fish | source
 
 # aliases
 alias sudo="sudo "
