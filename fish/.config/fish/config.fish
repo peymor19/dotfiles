@@ -31,7 +31,7 @@ alias gfo='git fetch origin'
 alias gpd='git pull origin develop'
 alias gpm='git pull origin master'
 alias gp='git pull'
-alias gl='git log --graph --color'
+alias gl='git log --graph --decorate --pretty=oneline --abbrev-commit'
 alias grep='grep --color=auto'
 alias cleangit='git branch --merged | grep -E "(^\*|master|dev)" | xargs git branch -d'
 
