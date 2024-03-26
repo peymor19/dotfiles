@@ -2,11 +2,14 @@ return {
     "vim-test/vim-test",
 
     config = function()
-        vim.cmd [[
-            let test#strategy = "neovim"
-        ]]
-        vim.cmd [[
-            let test#go#gotest#options = '-v'
-        ]]
+        vim.g["test#elixir#exunit#options"] = '--cover'
+
+        vim.g["test#preserve_screen"] = false
+
+        vim.g['test#strategy'] = {
+          nearest = 'toggleterm',
+          file = 'toggleterm',
+          suite = 'toggleterm'
+        }
     end
 }
