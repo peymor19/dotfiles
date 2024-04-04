@@ -7,8 +7,10 @@ vim.api.nvim_set_keymap("i", "jj", "<ESC>", opts)
 -- nnore map <silent> vv <C-w>v
 
 -- Vim Test commands
-vim.api.nvim_set_keymap("n", "<Leader>t", "<cmd>TestNearest<cr>", opts)
 vim.api.nvim_set_keymap("n", "<Leader>T", "<cmd>TestFile<cr>", opts)
+vim.api.nvim_set_keymap("n", "<Leader>t", "<cmd>TestNearest<cr>", opts)
+vim.api.nvim_set_keymap("n", "<Leader>l", "<cmd>TestLast<cr>", opts)
+vim.api.nvim_set_keymap("n", "<Leader>g", "<cmd>TestVisit<cr>", opts)
 
 -- Vertical half page jump with screen centering
 vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", opts)
