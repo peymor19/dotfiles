@@ -36,6 +36,11 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3/scripts/lock
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 15
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 15
+
+
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -135,27 +140,27 @@ bindsym $sup+minus scratchpad show
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "main"
-set $ws2 "monitor v"
-set $ws3 "monitor h"
-set $ws4 "term"
-set $ws5 "term2"
-set $ws6 "extra"
-set $ws7 "web"
-set $ws8 "mail"
-set $ws9 "tickets"
-set $ws10 "extra"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 # switch to workspace
 bindsym $sup+1 workspace $ws1
-bindsym $sup+2 workspace $ws2; exec --no-startup-id [ $(ps h -C keybase | wc -l) = 0 ] && /usr/bin/run_keybase
+bindsym $sup+2 workspace $ws2
 bindsym $sup+3 workspace $ws3
-bindsym $sup+4 workspace $ws4; exec --no-startup-id [ $(ps h -C alacritty | wc -l) = 0 ] && /usr/bin/alacritty
+bindsym $sup+4 workspace $ws4
 bindsym $sup+5 workspace $ws5
 bindsym $sup+6 workspace $ws6
-bindsym $sup+7 workspace $ws7; exec --no-startup-id [ $(ps h -C qutebrowser | wc -l) = 0 ] && /usr/bin/qutebrowser gmail.com https://gitlab.com/groups/utiliflex/-/boards https://utiliflex.mojohelpdesk.com/ma/#/tickets/search?query_string=*&page=1
-bindsym $sup+8 workspace $ws8;
-bindsym $sup+9 workspace $ws9;
+bindsym $sup+7 workspace $ws7
+bindsym $sup+8 workspace $ws8
+bindsym $sup+9 workspace $ws9
 bindsym $sup+0 workspace $ws10
 
 # move focused container to workspace
@@ -224,10 +229,10 @@ exec --no-startup-id ~/.config/i3/scripts/workmonitors.sh
 bindsym $sup+m exec --no-startup-id ~/.config/i3/scripts/workmonitors.sh
 
 # wallpaper config
-exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpapers/fedorawallpaper.png
+exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpapers/arch.png
 
 # touch pad config to prevent accidental middle clicks
-exec --no-startup-id xinput set-button-map 11 1 1 3 4 5 6 7
+exec --no-startup-id xinput set-button-map $(xinput list --id-only 'ELAN0672:00 04F3:3187 Touchpad') 1 1 3 4 5 6 7
 
 # colors
 # class                 border  backgr. text    indicator child_border

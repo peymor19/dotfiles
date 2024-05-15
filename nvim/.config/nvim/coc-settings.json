@@ -27,5 +27,6 @@
         "command": "lua",
         "filetypes": ["lua"]
     }
-  }
+  },
+  "snippets.ultisnips.pythonPrompt": false
 }

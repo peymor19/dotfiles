@@ -1,4 +1,4 @@
-set -x PATH $PATH /usr/local/go/bin $GOPATH/bin ~/go/bin /opt $HOME/.config/lf/ $HOME/.local/bin/ $HOME/.cargo/bin
+set -x PATH $PATH /usr/local/go/bin $GOPATH/bin ~/go/bin /opt $HOME/.config/lf/ $HOME/.local/bin/ $HOME/.cargo/bin /opt/elixir/bin
 
 source ~/.config/fish/fish_greeting
 set -U fish_greeting
@@ -47,3 +47,13 @@ alias ism='iex -S mix'
 set -x ERL_AFLAGS "-kernel shell_history enabled"
 set -x TERM "alacritty"
 set -x TERMINAL "alacritty"
+
+# default browser
+set -x BROWSER "brave"
+
+# Start X at login
+if status is-login
+    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
+        exec startx &>/dev/null
+    end
+end
