@@ -14,6 +14,14 @@ size = 8.0
 family = "Fira Code"
 style = "Regular"
 
+[font.bold]
+family = "Fira Code"
+style = "Bold"
+
+[font.italic]
+family = "Fira Code"
+style = "Italic"
+
 [colors.primary]
 background = "0x1a1b26"
 foreground = "0xc0caf5"

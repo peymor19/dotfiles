@@ -51,6 +51,9 @@ set -x TERMINAL "alacritty"
 # default browser
 set -x BROWSER "brave"
 
+# set -x DOCKER_HOST "unix:///run/user/$(id -u)/podman/podman.sock"
+set -x DOCKER_HOST "unix:///var/run/docker.sock"
+
 # Start X at login
 if status is-login
     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1

@@ -36,8 +36,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3/scripts/lock
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 15
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 15
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 15
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 15
 
 
 
