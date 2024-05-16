@@ -11,18 +11,14 @@ fish
 nvim
 starship
 gcc
-gcc-c++
 nodejs
 lua
 nerdfonts
-nitch
 python3
-python3-pip
 ripgrep
 fd-find
 preload
 jq
-perl-JSON-PP
 composer
 dunst
 alacritty
@@ -30,14 +26,14 @@ rofi
 i3
 ```
 
-install pynvim
-```
-/usr/bin/python3 -m pip install pynvim
-```
-
 for alacritty
 ```
  curl -sSL https://raw.githubusercontent.com/alacritty/alacritty/master/extra/alacritty.info | tic -x -
+```
+
+for intel sound
+```
+sudo pacman -S sof-firmware
 ```
 
 ```
