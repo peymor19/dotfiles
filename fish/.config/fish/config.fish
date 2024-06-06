@@ -8,6 +8,7 @@ starship init fish | source
 # aliases
 alias sudo="sudo "
 alias vim="nvim"
+alias cat="bat"
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -41,12 +42,16 @@ alias pdf='evince'
 
 alias dc='docker compose'
 
+alias pc='podman-compose'
+
 alias ism='iex -S mix'
 
 # enable history for Elixir's IEX
 set -x ERL_AFLAGS "-kernel shell_history enabled"
-set -x TERM "alacritty"
-set -x TERMINAL "alacritty"
+
+# default terminal
+set -x TERM "xterm-256color"
+set -x TERMINAL "xterm-256color"
 
 # default browser
 set -x BROWSER "brave"
