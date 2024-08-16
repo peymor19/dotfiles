@@ -46,8 +46,11 @@ alias pc='podman-compose'
 
 alias ism='iex -S mix'
 
+alias clip='xclip -sel clip'
+
 # enable history for Elixir's IEX
 set -x ERL_AFLAGS "-kernel shell_history enabled"
+set -x ERL_TOP "/opt/otp"
 
 # default terminal
 set -x TERM "xterm-256color"

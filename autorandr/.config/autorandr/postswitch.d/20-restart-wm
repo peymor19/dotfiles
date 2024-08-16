@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sleep 0.5
+i3-msg restart
+notify-send -i display "Display profile" "$AUTORANDR_CURRENT_PROFILE"
