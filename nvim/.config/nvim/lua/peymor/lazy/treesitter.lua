@@ -4,15 +4,22 @@ return {
         build = ":TSUpdate",
         config = function()
             require('nvim-treesitter.configs').setup({
-
-                ensure_installed = { },
+                ensure_installed = {},
 
                 sync_install = false,
 
                 auto_install = true,
 
                 highlight = {
-                  enable = true,
+                    enable = true,
+                    disable = function(_, buf)
+                        local max_filesize = 10000 * 1024 -- 10 MB
+                        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+                        if ok and stats and stats.size > max_filesize then
+                            vim.notify_once("Treesitter disabled")
+                            return true
+                        end
+                    end,
                 },
 
                 indent = {
