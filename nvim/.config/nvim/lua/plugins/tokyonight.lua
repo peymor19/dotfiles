@@ -1,14 +1,12 @@
 return {
-
     "folke/tokyonight.nvim",
+
     branch = "main",
     lazy = false,
+    priority = 1000,
 
     config = function()
-
-
         require("tokyonight").setup({
-              -- use the night style
           style = "night",
           -- disable italic for functions
           styles = {
@@ -22,7 +20,6 @@ return {
           end
         })
 
-        -- Vim Colorscheme
         vim.cmd.colorscheme('tokyonight')
     end
 }

@@ -13,4 +13,11 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup('peymor.lazy')
+require("lazy").setup({
+    spec = {
+        { import = 'plugins' },
+    },
+    -- colorscheme for lazy installer
+    install = { colorscheme = { "tokyonight" } },
+    checker = { enabled = true },
+})

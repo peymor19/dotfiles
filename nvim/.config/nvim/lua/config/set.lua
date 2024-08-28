@@ -50,6 +50,10 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "no"
 vim.opt.compatible = false
 
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
+
 -- Auto change directory to newly created file directory
 vim.opt.autochdir = false
 
