@@ -54,7 +54,8 @@ brew install ripgrep
 
 brew tap homebrew/cask-fonts
 brew install font-hack-nerd-font
-brew install --cask font-fira-code
+# set iterm font to this
+brew install --cask font-fira-code-nerd-font
 
 brew install wget
 
