@@ -61,5 +61,14 @@ vim.g.netrw_winsize = 25
 -- Auto change directory to newly created file directory
 vim.opt.autochdir = false
 
+-- popup opactity
+vim.opt.pumblend = 60
+
+-- fillchars -- removes tilde
+vim.wo.fillchars ='eob: '
+
+-- keeps one status bar even with split windows
+vim.opt.laststatus = 3
+
 -- Sets a color column on the right for reference
 -- vim.opt.colorcolumn = "80"

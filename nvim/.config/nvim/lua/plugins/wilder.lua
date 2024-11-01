@@ -44,32 +44,40 @@ return {
         })
 
         wilder.set_option('renderer', wilder.renderer_mux({
-
-          [':'] = wilder.popupmenu_renderer(
-            wilder.popupmenu_border_theme({
-                highlighter = {
-                    wilder.lua_pcre2_highlighter(),
-                    wilder.lua_fzy_highlighter(),
-                },
-                highlights = {
-                    border = 'Normal',
-                    accent = wilder.make_hl('WilderAccent', 'Pmenu', {{a = 1}, {a = 1}, {foreground = '#f4468f'}}),
-                },
-                border = 'rounded',
-                pumblend = 20, -- sets the transparency of the box
-                max_height = '25%',
-                left = {' ', wilder.popupmenu_devicons()},
-                right = {' ', wilder.popupmenu_devicons()},
-                empty_message = wilder.popupmenu_empty_message_with_spinner(),
+            [':'] = wilder.popupmenu_renderer(
+                wilder.popupmenu_border_theme({
+                    highlighter = {
+                        wilder.lua_fzy_highlighter(),
+                    },
+                    highlights = {
+                        border = 'Normal',
+                        accent = wilder.make_hl('WilderAccent', 'Pmenu', {{a = 1}, {a = 1}, {foreground = '#f4468f'}}),
+                    },
+                    border = 'rounded',
+                    pumblend = 20, -- sets the transparency of the box
+                    max_height = '25%',
+                    left = {' ', wilder.popupmenu_devicons()},
+                    right = {' ', wilder.popupmenu_devicons()},
+                    empty_message = wilder.popupmenu_empty_message_with_spinner(),
                 })
             ),
-
-          ['/'] = wilder.wildmenu_renderer({
-                highlighter = {
-                    wilder.lua_fzy_highlighter(),
-                },
-          }),
-
+            ['/'] = wilder.popupmenu_renderer(
+                wilder.popupmenu_border_theme({
+                    highlighter = {
+                        wilder.lua_fzy_highlighter(),
+                    },
+                    highlights = {
+                        border = 'Normal',
+                        accent = wilder.make_hl('WilderAccent', 'Pmenu', {{a = 1}, {a = 1}, {foreground = '#f4468f'}}),
+                    },
+                    border = 'rounded',
+                    pumblend = 0, -- sets the transparency of the box
+                    max_height = '25%',
+                    left = {' ', wilder.popupmenu_devicons()},
+                    right = {' ', wilder.popupmenu_devicons()},
+                    empty_message = wilder.popupmenu_empty_message_with_spinner(),
+                })
+            )
         }))
     end
 }

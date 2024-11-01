@@ -18,6 +18,6 @@ require("lazy").setup({
         { import = 'plugins' },
     },
     -- colorscheme for lazy installer
-    install = { colorscheme = { "tokyonight" } },
+    install = { colorscheme = { "catppuccin" } },
     checker = { enabled = true },
 })
