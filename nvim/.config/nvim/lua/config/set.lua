@@ -19,12 +19,16 @@ vim.cmd('highlight Cursorline cterm=NONE ctermbg=black')
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.textwidth = 160
+vim.opt.textwidth = 250
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
+-- wrap text and show unicode char for wrapped line
+vim.opt.wrap = true
+vim.opt.breakindent = true
+vim.opt.breakindentopt=sbr
+vim.opt.showbreak="↪ "
 
 -- Vim file save
 vim.opt.swapfile = false
@@ -59,4 +63,3 @@ vim.opt.autochdir = false
 
 -- Sets a color column on the right for reference
 -- vim.opt.colorcolumn = "80"
-
