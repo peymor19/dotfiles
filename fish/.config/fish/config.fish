@@ -8,7 +8,6 @@ starship init fish | source
 # aliases
 alias sudo="sudo "
 alias vim="nvim"
-alias cat="bat"
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -59,7 +58,9 @@ set -x TERMINAL "xterm-256color"
 # default browser
 set -x BROWSER "brave"
 
-# set -x DOCKER_HOST "unix:///run/user/$(id -u)/podman/podman.sock"
+set -x IEX true
+
+#set -x DOCKER_HOST "unix:///run/user/$(id -u)/podman/podman.sock"
 set -x DOCKER_HOST "unix:///var/run/docker.sock"
 
 # Start X at login
