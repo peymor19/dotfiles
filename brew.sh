@@ -54,11 +54,13 @@ brew install ripgrep
 
 brew tap homebrew/cask-fonts
 brew install font-hack-nerd-font
-# set iterm font to this
+# if iterm set iterm font to this
 brew install --cask font-fira-code-nerd-font
 
 brew install wget
 
+#terminal
+brew install wezterm
 
 # terminal file explorer
 brew install lf
