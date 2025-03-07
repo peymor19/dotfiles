@@ -3,7 +3,7 @@ The dotfiles are meant to be installed using [stow](https://www.gnu.org/software
 
 ## Requirements
 
-### Packagaes
+### Packages
 Install these with your preferred package manager or from source:
 ```
 stow
@@ -24,6 +24,41 @@ dunst
 alacritty
 rofi
 i3
+```
+
+Required for neovim
+```
+python3
+python3-pip
+nodejs
+npm
+```
+
+Packages required for fish/zsh
+```
+git
+git-delta
+```
+
+Plugins required for zsh
+```
+zoxide
+zsh-autosuggestions
+history-substring-search
+zsh-syntax-highlighting
+```
+
+Install zsh syntax highlighting plugins
+```
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+Optional for neovim telescope
+```
+ripgrep
+fd-find
 ```
 
 for alacritty
