@@ -1,3 +1,4 @@
+set -x GOPATH $HOME/go
 set -x PATH $PATH /usr/local/go/bin $GOPATH/bin ~/go/bin /opt $HOME/.config/lf/ $HOME/.local/bin/ $HOME/.cargo/bin /opt/elixir/bin
 
 source ~/.config/fish/fish_greeting
@@ -51,17 +52,22 @@ alias clip='xclip -sel clip'
 set -x ERL_AFLAGS "-kernel shell_history enabled"
 set -x ERL_TOP "/opt/otp"
 
-# default terminal
 set -x TERM "xterm-256color"
 set -x TERMINAL "xterm-256color"
 
-# default browser
 set -x BROWSER "brave"
 
 set -x IEX true
 
 #set -x DOCKER_HOST "unix:///run/user/$(id -u)/podman/podman.sock"
 set -x DOCKER_HOST "unix:///var/run/docker.sock"
+
+# Start ssh-agent
+if test -z (pgrep ssh-agent | string collect)
+    eval (ssh-agent -c) > /dev/null
+    set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
+    set -Ux SSH_AGENT_PID $SSH_AGENT_PID
+end
 
 # Start X at login
 if status is-login
