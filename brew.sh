@@ -23,15 +23,24 @@ brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
 brew install gnu-sed --with-default-names
 
-# Install `wget` with IRI support.
-brew install wget --with-iri
-
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg
 
+# for go test -race
+brew install gcc
+
+#nvim stuff
+brew install neovim
+brew install node
+brew install wget
+brew install fd
+npm -g install neovim
+
+brew install elixir
+brew install podman
+
 # Install more recent versions of some macOS tools.
 brew install grep
-brew install neovim
 brew install openssh
 brew install tmux
 
@@ -44,32 +53,17 @@ brew install git
 brew install git-lfs
 brew install imagemagick --with-webp
 brew install lua
-brew install ssh-copy-id
 brew install tree
-brew install elixir
 
 # this install dotfiles
 brew install stow
 brew install ripgrep
 
-brew tap homebrew/cask-fonts
 brew install font-hack-nerd-font
-# if iterm set iterm font to this
 brew install --cask font-fira-code-nerd-font
-
-brew install wget
 
 #terminal
 brew install wezterm
-
-# terminal file explorer
-brew install lf
-
-# nicer cat
-brew install bat
-brew install --cask amethyst
-
-
 
 # Remove outdated versions from the cellar.
 brew cleanup
