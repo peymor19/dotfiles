@@ -1,10 +1,21 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+path=("$(brew --prefix grep)/libexec/gnubin" $path)
+path=("$(brew --prefix openvpn)/sbin/openvpn" $path)
+path=("$(brew --prefix gnu-sed)/libexec/gnubin" $path)
+path=("$(brew --prefix coreutils)/libexec/gnubin" $path)
+path=("$(brew --prefix findutils)/libexec/gnubin" $path)
+
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
 path+=("$HOME/.local/bin")
 export PATH
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+GPG_TTY=$(tty)
+export GPG_TTY
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -112,6 +123,8 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 alias sudo="sudo "
 alias vim="nvim"
 alias ism='iex -S mix'
+alias mt='mix test'
+alias dc='docker-compose'
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -123,7 +136,7 @@ alias gst='git status'
 alias gau='git add -u'
 alias gaa='git add -A'
 alias ga='git add'
-alias gb='git branch'
+alias gb='git branch -a'
 alias gc='git commit -sv'
 alias gcb='git checkout -b'
 alias gcm='git checkout master'
@@ -138,3 +151,5 @@ alias gp='git pull'
 alias gl='git log --graph --decorate --pretty=oneline --abbrev-commit'
 alias grep='grep --color=auto'
 alias cleangit='git branch --merged | grep -Ev "(^\*|^\+|master|main|dev)" | xargs --no-run-if-empty git branch -d'
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+export PATH="/opt/homebrew/opt/erlang@27/bin:$PATH"
