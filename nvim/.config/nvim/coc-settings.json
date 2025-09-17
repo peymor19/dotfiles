@@ -22,10 +22,6 @@
       "rootPatterns": ["go.mod"],
       "trace.server": "verbose",
       "filetypes": ["go"]
-    },
-    "lua": {
-        "command": "lua",
-        "filetypes": ["lua"]
     }
   },
   "snippets.ultisnips.pythonPrompt": false
