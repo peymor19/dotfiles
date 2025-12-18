@@ -31,7 +31,7 @@ vim.keymap.set('n', "tt", "<cmd>Telescope<cr>")
 vim.keymap.set('n', "ff", "<cmd>Telescope find_files hidden=true<cr>")
 vim.keymap.set('n', "fg", "<cmd>Telescope live_grep <cr>")
 vim.keymap.set('n', "fb", "<cmd>Telescope buffers<cr>")
-vim.keymap.set('n', "fn", "<cmd>Telescope help_tags<cr>")
+vim.keymap.set('n', "fh", "<cmd>Telescope help_tags<cr>")
 
 -- COC key maps
 vim.keymap.set("n", "gd", "<Plug>(coc-definition)<cr>", opts)

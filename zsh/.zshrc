@@ -8,6 +8,8 @@ path=("$(brew --prefix findutils)/libexec/gnubin" $path)
 
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
 path+=("$HOME/.local/bin")
 export PATH
 
